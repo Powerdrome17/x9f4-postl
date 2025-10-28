@@ -1303,9 +1303,9 @@ button, .option-button, .nav-button, .start-button {
         top: -30px;
     }
 }
-    
-    /* Ajustar animação para não sair da tela em mobile */
-    @keyframes floatAround {
+
+ /* Ajustar animação para não sair da tela em mobile */
+@keyframes floatAround {
         0% {
             left: 5%;
             top: 15%;
@@ -1327,7 +1327,6 @@ button, .option-button, .nav-button, .start-button {
             top: 15%;
         }
     }
-}
 
 /* ===== EMOJIS DE FESTA ===== */
 .party-emojis {

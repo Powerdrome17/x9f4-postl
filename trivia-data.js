@@ -14,7 +14,7 @@
 
 const triviaQuestions = [
     {
-        hint: "Esta pessoa que te vai desejar os parabéns conhece-te há muito tempo.",
+        hint: "Dica mensagem sobre a pessoa aqui",
         options: [
             { name: "Maria", photo: "maria.jpg" },
             { name: "João", photo: "joao.jpg" },
@@ -26,7 +26,7 @@ const triviaQuestions = [
         congratsMessage: "Mensagem de Parabéns e Foto"
     },
     {
-        hint: "Esta pessoa adora passar tempo contigo e faz-te rir sempre!",
+        hint: "Dica mensagem sobre a pessoa aqui",
         options: [
             { name: "Pedro", photo: "pedro.jpg" },
             { name: "Sofia", photo: "sofia.jpg" },
@@ -38,7 +38,7 @@ const triviaQuestions = [
         congratsMessage: "Mensagem de Parabéns e Foto"
     },
     {
-        hint: "Esta pessoa é super criativa e está sempre a planear coisas fixes!",
+        hint: "Dica mensagem sobre a pessoa aqui",
         options: [
             { name: "Rita", photo: "rita.jpg" },
             { name: "Miguel", photo: "miguel.jpg" },

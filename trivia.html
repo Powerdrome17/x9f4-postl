@@ -15,9 +15,7 @@
             <img src="assets/images/image_miniatura2.png" alt="Aniversariante" class="avatar-face">
             <div class="avatar-body"></div>
         </div>
-        <div class="floating-bubble">
-            Vamos lá! 🎉
-        </div>
+        <div class="floating-bubble">🎉</div>
     </div>
 
     <div class="container">
@@ -33,8 +31,8 @@
     <script>
         // Inicializa a trivia ao carregar a página
         document.addEventListener('DOMContentLoaded', function() {
+            animateCharacter(); // Chama primeiro para aparecer logo
             loadTrivia();
-            animateCharacter();
         });
     </script>
 </body>

@@ -41,21 +41,16 @@ function loadTrivia() {
     let html = `
         <h2 class="trivia-question">Quem te vai dar os parabéns a seguir?</h2>
         <div class="hint-box">
-            � <strong>Dica:</strong> ${question.hint}
+            🤔 <strong>Dica:</strong> ${question.hint}
         </div>
         <div class="options-container">
     `;
     
-    // Adiciona as opções com ícone elegante
+    // Adiciona as opções - apenas o nome
     question.options.forEach((option, index) => {
-        const photoPath = `assets/people/${option.photo}`;
         html += `
             <button class="option-button" onclick="checkAnswer(${index})">
-                <div class="option-emoji">✨</div>
-                <img src="${photoPath}" alt="${option.name}" class="option-image"
-                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffc5d9%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E👤%3C/text%3E%3C/svg%3E'">
                 <div class="option-name">${option.name}</div>
-                <div class="option-hint">Toca aqui</div>
             </button>
         `;
     });
@@ -185,9 +180,13 @@ function animateCharacter() {
     const bubble = document.querySelector('.floating-bubble');
     if (!bubble) return;
     
-    let messageIndex = 0;
+    // Mostra uma mensagem aleatória logo no início
+    let messageIndex = Math.floor(Math.random() * messages.length);
+    bubble.textContent = messages[messageIndex];
+    
+    // Continua a mudar para mensagens aleatórias
     setInterval(() => {
-        messageIndex = (messageIndex + 1) % messages.length;
+        messageIndex = Math.floor(Math.random() * messages.length);
         bubble.textContent = messages[messageIndex];
     }, 5000); // Muda a mensagem a cada 5 segundos
 }
