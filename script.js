@@ -57,6 +57,13 @@ function loadTrivia() {
     
     html += `</div>`;
     container.innerHTML = html;
+    
+    // Remove focus de qualquer elemento ativo (fix para mobile)
+    setTimeout(() => {
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
+    }, 100);
 }
 
 // Verifica a resposta selecionada
