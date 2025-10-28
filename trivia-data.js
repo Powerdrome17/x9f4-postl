@@ -21,9 +21,9 @@ const triviaQuestions = [
             { name: "Ana", photo: "ana.jpg" }
         ],
         correctAnswer: 1, // João (índice 1)
-        wrongMessage: "Ups! Nem o bolo acreditou nisso! 😆🎂",
+        wrongMessage: "Mensagem quando erra",
         personPhoto: "joao.jpg",
-        congratsMessage: "Olá! Sou o João e quero desejar-te um FELIZ ANIVERSÁRIO! 🎉<br><br>Que este novo ano seja repleto de alegrias, conquistas e momentos inesquecíveis! És uma pessoa incrível e mereces tudo de bom! 🎂✨"
+        congratsMessage: "Mensagem de Parabéns e Foto"
     },
     {
         hint: "Esta pessoa adora passar tempo contigo e faz-te rir sempre!",
@@ -33,9 +33,9 @@ const triviaQuestions = [
             { name: "Carlos", photo: "carlos.jpg" }
         ],
         correctAnswer: 1, // Sofia (índice 1)
-        wrongMessage: "Quase! Mas não foi dessa vez! 😅",
+        wrongMessage: "Mensagem quando erra",
         personPhoto: "sofia.jpg",
-        congratsMessage: "Olá querida! Sou a Sofia! 💕<br><br>Parabéns pelos teus 31 anos! Que continues sempre com esse sorriso lindo e essa energia contagiante! Muitas felicidades! 🎈🌟"
+        congratsMessage: "Mensagem de Parabéns e Foto"
     },
     {
         hint: "Esta pessoa é super criativa e está sempre a planear coisas fixes!",
@@ -45,9 +45,9 @@ const triviaQuestions = [
             { name: "Beatriz", photo: "beatriz.jpg" }
         ],
         correctAnswer: 2, // Beatriz (índice 2)
-        wrongMessage: "Oops! Tenta outra vez! O bolo ainda está à espera! 🎂😄",
+        wrongMessage: "Mensagem quando erra",
         personPhoto: "beatriz.jpg",
-        congratsMessage: "Surpresa! Sou a Beatriz! 🎊<br><br>Feliz aniversário, linda! Que este ano seja o melhor de todos, cheio de amor, saúde e muitas risadas! Aproveita o teu dia ao máximo! 🥳💖"
+        congratsMessage: "Mensagem de Parabéns e Foto"
     }
 ];
 

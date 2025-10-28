@@ -151,12 +151,11 @@ function showFinalMessage() {
             <h2 class="trivia-question">🎊 Parabéns! 🎊</h2>
             <div class="congratulations-text">
                 <p style="font-size: 1.5em; margin: 30px 0;">
-                    Completaste todas as surpresas!<br><br>
-                    Esperamos que tenhas gostado desta celebração especial! 💖
+                    Mensagem final de parabéns personalizada!
                 </p>
                 <div style="font-size: 3em; margin: 20px 0;">🎂✨🎉</div>
                 <p style="font-size: 1.3em; color: #ff6b9d; font-weight: 700;">
-                    FELIZ 31º ANIVERSÁRIO!
+                    FELIZ ANIVERSÁRIO!
                 </p>
             </div>
             <button class="nav-button" onclick="window.location.href='index.html'">
@@ -175,12 +174,12 @@ function showFinalMessage() {
 // Anima o personagem flutuante com mensagens diferentes
 function animateCharacter() {
     const messages = [
-        'Vamos lá! 🎉',
-        'Quem será? 🤔',
-        'Pensa bem! 💭',
-        'Estás quase! ✨',
-        'Consegues! 💪',
-        'Surpresa! 🎊'
+        'Mensagem 1! 🎉',
+        'Mensagem 2! 🤔',
+        'Mensagem 3! 💭',
+        'Mensagem 4! ✨',
+        'Mensagem 5! 💪',
+        'Mensagem 6! 🎊'
     ];
     
     const bubble = document.querySelector('.floating-bubble');
