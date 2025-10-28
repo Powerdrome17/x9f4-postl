@@ -104,6 +104,12 @@ function showCorrectAnswer(question) {
     const container = document.getElementById('triviaContainer');
     const photoPath = `assets/people/${question.personPhoto}`;
     
+    // Esconde a miniatura quando acerta
+    const floatingChar = document.querySelector('.floating-character');
+    if (floatingChar) {
+        floatingChar.classList.add('hidden');
+    }
+    
     const html = `
         <div class="feedback-container feedback-correct">
             <div class="feedback-message">
@@ -126,6 +132,13 @@ function showCorrectAnswer(question) {
 // Avança para a próxima pergunta
 function nextQuestion() {
     currentQuestionIndex++;
+    
+    // Mostra a miniatura novamente
+    const floatingChar = document.querySelector('.floating-character');
+    if (floatingChar) {
+        floatingChar.classList.remove('hidden');
+    }
+    
     loadTrivia();
 }
 
