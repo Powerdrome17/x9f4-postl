@@ -330,74 +330,56 @@ button, .option-button, .nav-button, .start-button {
 
 .option-button {
     background: white;
-    border: 2px solid rgba(255, 107, 157, 0.2);
-    padding: 25px 15px;
-    border-radius: 20px;
+    border: 2px solid rgba(255, 107, 157, 0.3);
+    padding: 20px 15px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: all 0.35s ease;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--cor-texto);
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Remove todas as transições e animações */
+    transition: none;
+    transform: none;
+}
+
+/* Remove completamente os efeitos hover/active/focus */
+.option-button:hover,
+.option-button:active,
+.option-button:focus {
+    background: white;
+    border: 2px solid rgba(255, 107, 157, 0.5);
+    color: #333;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    outline: none;
 }
 
 .option-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    background: linear-gradient(135deg, var(--cor-rosa), var(--cor-lilas));
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    z-index: -1;
-}
-
-.option-button:hover::before {
-    opacity: 1;
-}
-
-.option-button:hover {
-    border-color: transparent;
-    color: white;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(255, 107, 157, 0.25);
-    animation: none;
-}
-
-.option-button:active {
-    transform: translateY(-5px) scale(1.02);
+    display: none; /* Remove o gradiente */
 }
 
 .option-emoji {
-    font-size: 1.8em;
-    margin-bottom: 8px;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-.option-button:hover .option-emoji {
-    transform: scale(1.15);
-    opacity: 1;
+    display: none; /* Já não usamos emojis */
 }
 
 .option-name {
     font-size: 1.1em;
     font-weight: 600;
-    margin: 12px 0 5px 0;
+    margin: 0;
+    padding: 0;
     color: #333 !important;
 }
 
+/* Garante que o nome está sempre visível */
 .option-button:hover .option-name,
 .option-button:active .option-name,
-.option-button:focus .option-name {
+.option-button:focus .option-name,
+.option-button:visited .option-name {
     color: #333 !important;
 }
 
@@ -1114,25 +1096,39 @@ button, .option-button, .nav-button, .start-button {
     .option-button {
         padding: 18px 15px;
         font-size: 1em;
+        transition: none;
+        transform: none;
+    }
+    
+    .option-button:hover,
+    .option-button:active,
+    .option-button:focus {
+        background: white;
+        border: 2px solid rgba(255, 107, 157, 0.5);
+        color: #333;
+        transform: none;
+        outline: none;
     }
     
     .option-image {
-        width: 70px;
-        height: 70px;
+        display: none;
     }
     
     .option-emoji {
-        font-size: 1.4em;
+        display: none;
     }
     
     .option-name {
-        font-size: 0.95em;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
         color: #333 !important;
     }
     
     .option-button:hover .option-name,
     .option-button:active .option-name,
-    .option-button:focus .option-name {
+    .option-button:focus .option-name,
+    .option-button:visited .option-name {
         color: #333 !important;
     }
     
@@ -1225,37 +1221,47 @@ button, .option-button, .nav-button, .start-button {
     }
     
     .option-button {
-        padding: 12px 10px;
-        font-size: 0.85em;
+        padding: 15px 10px;
+        font-size: 0.9em;
         border-radius: 12px;
+        transition: none;
+        transform: none;
+    }
+    
+    .option-button:hover,
+    .option-button:active,
+    .option-button:focus {
+        background: white;
+        border: 2px solid rgba(255, 107, 157, 0.5);
+        color: #333;
+        transform: none;
+        outline: none;
     }
     
     .option-image {
-        width: 55px;
-        height: 55px;
-        border-width: 2px;
-        margin: 5px auto;
+        display: none; /* Não usamos mais imagens */
     }
     
     .option-emoji {
-        font-size: 1.1em;
-        margin-bottom: 3px;
+        display: none; /* Não usamos emojis */
     }
     
     .option-name {
-        font-size: 0.85em;
-        margin: 6px 0 2px 0;
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
         color: #333 !important;
     }
     
     .option-button:hover .option-name,
     .option-button:active .option-name,
-    .option-button:focus .option-name {
+    .option-button:focus .option-name,
+    .option-button:visited .option-name {
         color: #333 !important;
     }
     
     .option-hint {
-        font-size: 0.6em;
+        display: none; /* Não usamos hint */
     }
     
     .person-photo {
