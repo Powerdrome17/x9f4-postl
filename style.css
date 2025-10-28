@@ -134,17 +134,20 @@ button, .option-button, .nav-button, .start-button {
 }
 
 .subtitle {
-    font-size: 1.8em;
-    color: var(--cor-secundaria);
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--cor-rosa);
+    margin-bottom: 25px;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 0.95;
 }
 
 .welcome-text {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--cor-texto);
     margin-bottom: 40px;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 .start-button {
@@ -297,77 +300,158 @@ button, .option-button, .nav-button, .start-button {
 }
 
 .hint-box {
-    background: linear-gradient(135deg, var(--cor-pastel-azul), var(--cor-pastel-lilas));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 240, 0.95));
     padding: 20px 30px;
     border-radius: 15px;
-    margin: 20px auto 40px;
-    font-size: 1.2em;
+    margin: 20px auto 35px;
+    font-size: 1.1em;
     color: var(--cor-texto);
-    max-width: 600px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
+    border-left: 4px solid var(--cor-rosa);
+    backdrop-filter: blur(10px);
 }
 
 .hint-box strong {
-    color: var(--cor-secundaria);
+    color: var(--cor-rosa);
+    font-size: 1.05em;
 }
 
 .options-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
-    margin: 40px 0;
+    margin: 35px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .option-button {
-    background: var(--cor-branco);
-    border: 3px solid var(--cor-pastel-rosa);
-    padding: 20px;
+    background: white;
+    border: 2px solid rgba(255, 107, 157, 0.2);
+    padding: 25px 15px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.1em;
     font-weight: 600;
     color: var(--cor-texto);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--cor-rosa), var(--cor-lilas));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+}
+
+.option-button:hover::before {
+    opacity: 1;
 }
 
 .option-button:hover {
-    background: var(--cor-pastel-rosa);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 107, 157, 0.25);
+    animation: none;
+}
+
+.option-button:active {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.option-emoji {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.option-button:hover .option-emoji {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.option-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 12px 0 5px 0;
+    color: inherit;
+}
+
+.option-hint {
+    font-size: 0.75em;
+    opacity: 0;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 5px;
+    transition: opacity 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.option-button:hover .option-hint {
+    opacity: 1;
 }
 
 .option-image {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin: 10px auto;
     object-fit: cover;
-    border: 3px solid var(--cor-pastel-rosa);
-    /* INSTRUÇÃO: Adicione fotos das pessoas em assets/people/ */
+    border: 3px solid var(--cor-rosa);
+    transition: all 0.3s ease;
+}
+
+.option-button:hover .option-image {
+    border-color: white;
+    transform: scale(1.08);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Feedback da trivia */
 .feedback-container {
-    padding: 30px;
+    padding: 40px 30px;
     border-radius: 20px;
-    margin: 30px 0;
+    margin: 30px auto;
     animation: fadeInUp 0.5s ease;
+    max-width: 600px;
+    text-align: center;
 }
 
 .feedback-wrong {
-    background: linear-gradient(135deg, #ffcccc, #ff9999);
+    background: white;
+    border: 2px solid #ff6b9d;
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.15);
 }
 
 .feedback-correct {
-    background: linear-gradient(135deg, #c8e6c9, #81c784);
+    background: white;
+    border: 2px solid #81c784;
+    box-shadow: 0 4px 20px rgba(129, 199, 132, 0.15);
 }
 
 .feedback-message {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.3em;
+    margin-bottom: 25px;
     font-weight: 600;
+    color: var(--cor-texto);
 }
 
 .person-photo {
@@ -418,7 +502,7 @@ button, .option-button, .nav-button, .start-button {
 .floating-character {
     position: fixed;
     width: 120px;
-    height: 150px;
+    height: 160px;
     z-index: 1000;
     animation: floatAround 20s infinite ease-in-out;
     pointer-events: none;
@@ -441,34 +525,63 @@ button, .option-button, .nav-button, .start-button {
     box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
 }
 
+/* Corpo - vestido simples */
 .avatar-body {
     width: 60px;
-    height: 50px;
-    background: var(--cor-pastel-rosa);
-    border-radius: 10px 10px 20px 20px;
+    height: 70px;
+    background-color: #ff6b9d;
     margin: -5px auto 0;
+    border-radius: 15px 15px 30px 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    display: block;
     position: relative;
 }
 
-.avatar-body::before,
-.avatar-body::after {
+/* Braço esquerdo */
+.character-avatar::before {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 40px;
-    background: var(--cor-pastel-rosa);
-    border-radius: 15px;
-    top: 5px;
+    width: 15px;
+    height: 50px;
+    background: #ffd4a3;
+    border-radius: 8px;
+    top: 85px;
+    left: 15px;
+    transform-origin: top center;
+    animation: wave-left 2s infinite ease-in-out;
 }
 
-.avatar-body::before {
-    left: -20px;
-    animation: wave 1s infinite ease-in-out;
+/* Braço direito */
+.character-avatar::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background: #ffd4a3;
+    border-radius: 8px;
+    top: 85px;
+    right: 15px;
+    transform-origin: top center;
+    animation: wave-right 2s infinite ease-in-out;
 }
 
-.avatar-body::after {
-    right: -20px;
-    animation: wave 1s infinite ease-in-out 0.5s;
+/* Animações suaves dos braços */
+@keyframes wave-left {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes wave-right {
+    0%, 100% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
 }
 
 .floating-bubble {
@@ -517,15 +630,6 @@ button, .option-button, .nav-button, .start-button {
     100% {
         left: 10%;
         top: 20%;
-    }
-}
-
-@keyframes wave {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(-15deg);
     }
 }
 
@@ -991,6 +1095,25 @@ button, .option-button, .nav-button, .start-button {
     .options-container {
         grid-template-columns: 1fr;
         gap: 15px;
+        margin: 25px 0;
+    }
+    
+    .option-button {
+        padding: 20px 15px;
+        font-size: 1em;
+    }
+    
+    .option-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .option-emoji {
+        font-size: 1.5em;
+    }
+    
+    .option-name {
+        font-size: 1em;
     }
     
     .trivia-question {
@@ -998,30 +1121,31 @@ button, .option-button, .nav-button, .start-button {
     }
     
     .hint-box {
-        font-size: 1em;
+        font-size: 0.95em;
         padding: 15px 20px;
+        margin: 15px auto 25px;
     }
     
     /* Miniatura flutuante menor em mobile */
     .floating-character {
-        width: 80px;
-        height: 110px;
+        width: 100px;
+        height: 130px;
     }
     
     .avatar-face {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
     }
     
     .avatar-body {
-        width: 45px;
-        height: 40px;
+        width: 50px;
+        height: 55px;
     }
     
-    .avatar-body::before,
-    .avatar-body::after {
-        width: 20px;
-        height: 30px;
+    .character-avatar::before,
+    .character-avatar::after {
+        width: 12px;
+        height: 40px;
     }
     
     .floating-bubble {
@@ -1069,19 +1193,40 @@ button, .option-button, .nav-button, .start-button {
     }
     
     .hint-box {
-        font-size: 0.95em;
-        padding: 12px 15px;
-        margin: 15px 0 25px;
+        font-size: 0.9em;
+        padding: 15px;
+        margin: 15px 0 20px;
+    }
+    
+    .options-container {
+        gap: 12px;
+        margin: 20px 0;
     }
     
     .option-button {
-        padding: 15px;
-        font-size: 1em;
+        padding: 20px 15px;
+        font-size: 0.95em;
+        border-radius: 15px;
     }
     
     .option-image {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
+        border-width: 2px;
+    }
+    
+    .option-emoji {
+        font-size: 1.4em;
+        margin-bottom: 6px;
+    }
+    
+    .option-name {
+        font-size: 0.95em;
+        margin: 10px 0 4px 0;
+    }
+    
+    .option-hint {
+        font-size: 0.7em;
     }
     
     .person-photo {
@@ -1106,25 +1251,25 @@ button, .option-button, .nav-button, .start-button {
     
     /* Miniatura ainda menor em smartphones */
     .floating-character {
-        width: 70px;
-        height: 95px;
+        width: 80px;
+        height: 110px;
     }
     
     .avatar-face {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         border-width: 2px;
     }
     
     .avatar-body {
-        width: 38px;
-        height: 32px;
+        width: 42px;
+        height: 48px;
     }
     
-    .avatar-body::before,
-    .avatar-body::after {
-        width: 16px;
-        height: 24px;
+    .character-avatar::before,
+    .character-avatar::after {
+        width: 10px;
+        height: 35px;
     }
     
     .floating-bubble {
@@ -1132,6 +1277,7 @@ button, .option-button, .nav-button, .start-button {
         padding: 5px 8px;
         top: -30px;
     }
+}
     
     /* Ajustar animação para não sair da tela em mobile */
     @keyframes floatAround {

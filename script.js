@@ -41,19 +41,21 @@ function loadTrivia() {
     let html = `
         <h2 class="trivia-question">Quem te vai dar os parabéns a seguir?</h2>
         <div class="hint-box">
-            💡 <strong>Dica:</strong> ${question.hint}
+            � <strong>Dica:</strong> ${question.hint}
         </div>
         <div class="options-container">
     `;
     
-    // Adiciona as opções
+    // Adiciona as opções com ícone elegante
     question.options.forEach((option, index) => {
         const photoPath = `assets/people/${option.photo}`;
         html += `
             <button class="option-button" onclick="checkAnswer(${index})">
+                <div class="option-emoji">✨</div>
                 <img src="${photoPath}" alt="${option.name}" class="option-image"
                      onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffc5d9%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E👤%3C/text%3E%3C/svg%3E'">
-                <div>${option.name}</div>
+                <div class="option-name">${option.name}</div>
+                <div class="option-hint">Toca aqui</div>
             </button>
         `;
     });
@@ -83,10 +85,13 @@ function showWrongAnswer(question) {
     const html = `
         <div class="feedback-container feedback-wrong">
             <div class="feedback-message">
-                ${question.wrongMessage}
+                😅 Oops! Não foi desta...
             </div>
+            <p style="font-size: 1.1em; color: #666; margin: 20px 0;">
+                ${question.wrongMessage}
+            </p>
             <button class="nav-button retry-button" onclick="loadTrivia()">
-                Tentar Novamente 🔄
+                ✨ Tentar Novamente
             </button>
         </div>
     `;
@@ -102,7 +107,7 @@ function showCorrectAnswer(question) {
     const html = `
         <div class="feedback-container feedback-correct">
             <div class="feedback-message">
-                🎉 Acertaste! 🎉
+                ✨ Perfeito! ✨
             </div>
             <img src="${photoPath}" alt="Pessoa" class="person-photo"
                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2295%22 fill=%22%23ffd700%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 text-anchor=%22middle%22 dy=%22.3em%22%3E🎊%3C/text%3E%3C/svg%3E'">
@@ -110,7 +115,7 @@ function showCorrectAnswer(question) {
                 ${question.congratsMessage}
             </div>
             <button class="nav-button" onclick="nextQuestion()">
-                Continuar 🎈
+                Continuar 💫
             </button>
         </div>
     `;
