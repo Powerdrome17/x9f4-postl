@@ -1,0 +1,24 @@
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python (do servidor local)
+.venv/
+__pycache__/
+*.pyc
+
+# Backup de imagens (opcional)
+assets/backup/
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# Logs
+*.log
