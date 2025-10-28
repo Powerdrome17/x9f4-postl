@@ -395,12 +395,10 @@ button, .option-button, .nav-button, .start-button {
     color: #333 !important;
 }
 
-.option-button:hover .option-name {
-    color: white !important;
-}
-
-.option-button:active .option-name {
-    color: white !important;
+.option-button:hover .option-name,
+.option-button:active .option-name,
+.option-button:focus .option-name {
+    color: #333 !important;
 }
 
 .option-hint {

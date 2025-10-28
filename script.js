@@ -159,7 +159,7 @@ function showFinalMessage() {
                 </p>
             </div>
             <button class="nav-button" onclick="window.location.href='index.html'">
-                Voltar ao Início 🏠
+                Voltar ao Início
             </button>
         </div>
     `;
