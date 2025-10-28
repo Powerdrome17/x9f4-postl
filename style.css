@@ -392,11 +392,15 @@ button, .option-button, .nav-button, .start-button {
     font-size: 1.1em;
     font-weight: 600;
     margin: 12px 0 5px 0;
-    color: #333;
+    color: #333 !important;
 }
 
 .option-button:hover .option-name {
-    color: white;
+    color: white !important;
+}
+
+.option-button:active .option-name {
+    color: white !important;
 }
 
 .option-hint {
